@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "692a9ebd-e3a5-4d3f-b665-8d5ee4ebfe3b",
+		"_postman_id": "1775752d-2380-43df-8be1-2319665977d5",
 		"name": "Delphix",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -23,7 +23,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/session",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -53,7 +56,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/login",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -74,7 +80,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/group",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -95,7 +104,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/database",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -122,7 +134,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/snapshot?database=ORACLE_DB_CONTAINER-1",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -155,7 +170,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/snapshot/ORACLE_SNAPSHOT-6/timeflowRange",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -178,7 +196,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/environment",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -199,7 +220,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/host",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -220,7 +244,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/repository?environment=UNIX_HOST_ENVIRONMENT-2",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -256,7 +283,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/database/provision/defaults",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -277,7 +307,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"type\": \"OracleProvisionParameters\",\n    \"container\": {\n        \"type\": \"OracleDatabaseContainer\",\n        \"name\": \"apivdb\",\n        \"group\": \"GROUP-1\"\n    },\n    \"source\": {\n        \"type\": \"OracleVirtualSource\",\n        \"mountBase\": \"/mnt/provision\",\n        \"configParams\": {\n            \"processes\": \"300\",\n            \"nls_language\": \"'AMERICAN'\",\n            \"pga_aggregate_target\": \"524288000\",\n            \"sga_target\": \"1577058304\",\n            \"nls_territory\": \"'AMERICA'\",\n            \"compatible\": \"'11.2.0.4'\",\n            \"remote_login_passwordfile\": \"'EXCLUSIVE'\",\n            \"open_cursors\": \"300\"\n        },\n        \"nodeListeners\": [],\n        \"operations\": {\n            \"type\": \"VirtualSourceOperations\",\n            \"configureClone\": [],\n            \"preRefresh\": [],\n            \"postRefresh\": [],\n            \"preRollback\": [],\n            \"postRollback\": [],\n            \"preSnapshot\": [],\n            \"postSnapshot\": [],\n            \"preStart\": [],\n            \"postStart\": [],\n            \"preStop\": [],\n            \"postStop\": []\n        },\n        \"redoLogSizeInMB\": 1024,\n        \"redoLogGroups\": 3,\n        \"archivelogMode\": true,\n        \"customEnvVars\": [],\n        \"allowAutoVDBRestartOnHostReboot\": true\n    },\n    \"sourceConfig\": {\n        \"type\": \"OracleSIConfig\",\n        \"name\": \"apivdb\",\n        \"linkingEnabled\": false,\n        \"repository\": \"ORACLE_INSTALL-7\",\n        \"services\": [],\n        \"databaseName\": \"apivdb\",\n        \"uniqueName\": \"apivdb\",\n        \"instance\": {\n            \"type\": \"OracleInstance\",\n            \"instanceNumber\": 1,\n            \"instanceName\": \"apivdb\"\n        }\n    },\n    \"timeflowPointParameters\": {\n        \"type\": \"TimeflowPointSemantic\",\n        \"location\": \"LATEST_POINT\",\n        \"container\": \"ORACLE_DB_CONTAINER-1\"\n    },\n    \"masked\": false,\n    \"openResetlogs\": true,\n    \"physicalStandby\": false,\n    \"newDBID\": false\n}",
+					"raw": "{\n    \"type\": \"OracleProvisionParameters\",\n    \"container\": {\n        \"type\": \"OracleDatabaseContainer\",\n        \"name\": \"apivdb\",\n        \"group\": \"GROUP-3\"\n    },\n    \"source\": {\n        \"type\": \"OracleVirtualSource\",\n        \"mountBase\": \"/mnt/provision\",\n            \"configParams\": {\n                \"processes\": \"150\",\n                \"pga_aggregate_target\": \"268435456\",\n                \"sga_target\": \"805306368\",\n                \"log_archive_format\": \"'%t_%s_%r.arc'\",\n                \"compatible\": \"'11.2.0.0.0'\",\n                \"remote_login_passwordfile\": \"'EXCLUSIVE'\",\n                \"open_cursors\": \"300\"\n            },\n        \"nodeListeners\": [],\n        \"operations\": {\n            \"type\": \"VirtualSourceOperations\",\n            \"configureClone\": [],\n            \"preRefresh\": [],\n            \"postRefresh\": [],\n            \"preRollback\": [],\n            \"postRollback\": [],\n            \"preSnapshot\": [],\n            \"postSnapshot\": [],\n            \"preStart\": [],\n            \"postStart\": [],\n            \"preStop\": [],\n            \"postStop\": []\n        },\n        \"redoLogSizeInMB\": 1024,\n        \"redoLogGroups\": 3,\n        \"archivelogMode\": true,\n        \"customEnvVars\": [],\n        \"allowAutoVDBRestartOnHostReboot\": true\n    },\n    \"sourceConfig\": {\n        \"type\": \"OracleSIConfig\",\n        \"name\": \"apivdb\",\n        \"linkingEnabled\": false,\n        \"repository\": \"ORACLE_INSTALL-7\",\n        \"services\": [],\n        \"databaseName\": \"apivdb\",\n        \"uniqueName\": \"apivdb\",\n        \"instance\": {\n            \"type\": \"OracleInstance\",\n            \"instanceNumber\": 1,\n            \"instanceName\": \"apivdb\"\n        }\n    },\n    \"timeflowPointParameters\": {\n        \"type\": \"TimeflowPointSemantic\",\n        \"location\": \"LATEST_POINT\",\n        \"container\": \"ORACLE_DB_CONTAINER-1\"\n    },\n    \"masked\": false,\n    \"openResetlogs\": true,\n    \"physicalStandby\": false,\n    \"newDBID\": false\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -288,7 +318,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/database/provision",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -307,17 +340,20 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://10.0.1.10/resources/json/delphix/job/JOB-3318",
+					"raw": "http://10.0.1.10/resources/json/delphix/job/JOB-106",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
 						"json",
 						"delphix",
 						"job",
-						"JOB-3318"
+						"JOB-106"
 					]
 				}
 			},
@@ -332,7 +368,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/selfservice/template",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -354,7 +393,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/selfservice/datasource?dataLayout=JS_DATA_TEMPLATE-1",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -382,7 +424,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/database?provisionContainer=ORACLE_DB_CONTAINER-1",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -407,7 +452,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"type\":\"JSDataContainerCreateWithoutRefreshParameters\",\n    \"dataSources\" : [ \n        {\n         \"type\" : \"JSDataSourceCreateParameters\",\n         \"source\" : {\n            \"type\" : \"JSDataSource\",\n            \"priority\" : 1,\n            \"name\" : \"APICONT_DS\"\n        },\n        \"container\" : \"ORACLE_DB_CONTAINER-239\"\n        }\n     ],\n    \"name\" : \"APICONT\",\n    \"template\" : \"JS_DATA_TEMPLATE-1\",\n    \"owners\" : []\n}",
+					"raw": "{\n    \"type\":\"JSDataContainerCreateWithoutRefreshParameters\",\n    \"dataSources\" : [ \n        {\n         \"type\" : \"JSDataSourceCreateParameters\",\n         \"source\" : {\n            \"type\" : \"JSDataSource\",\n            \"priority\" : 1,\n            \"name\" : \"APICONT_DS\"\n        },\n        \"container\" : \"ORACLE_DB_CONTAINER-9\"\n        }\n     ],\n    \"name\" : \"APICONT\",\n    \"template\" : \"JS_DATA_TEMPLATE-1\",\n    \"owners\" : []\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -418,7 +463,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/selfservice/container",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -440,7 +488,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/selfservice/container",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -462,7 +513,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/selfservice/branch?dataLayout=JS_DATA_CONTAINER-58",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -488,7 +542,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"type\":\"JSBookmarkCreateParameters\",\n    \"bookmark\" : {\n        \"type\" : \"JSBookmark\",\n        \"name\" : \"bookmark api test\",\n        \"branch\" : \"JS_BRANCH-119\"\n    },\n    \"timelinePointParameters\" : {\n        \"type\": \"JSTimelinePointLatestTimeInput\",\n        \"sourceDataLayout\": \"JS_DATA_CONTAINER-58\"\n    }\n}",
+					"raw": "{\n    \"type\":\"JSBookmarkCreateParameters\",\n    \"bookmark\" : {\n        \"type\" : \"JSBookmark\",\n        \"name\" : \"bookmark api test\",\n        \"branch\" : \"JS_BRANCH-4\"\n    },\n    \"timelinePointParameters\" : {\n        \"type\": \"JSTimelinePointLatestTimeInput\",\n        \"sourceDataLayout\": \"JS_DATA_CONTAINER-3\"\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -499,7 +553,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/selfservice/bookmark",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -527,10 +584,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://10.0.1.10/resources/json/delphix/selfservice/container/JS_DATA_CONTAINER-58/refresh",
+					"raw": "http://10.0.1.10/resources/json/delphix/selfservice/container/JS_DATA_CONTAINER-3/refresh",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -538,7 +598,7 @@
 						"delphix",
 						"selfservice",
 						"container",
-						"JS_DATA_CONTAINER-58",
+						"JS_DATA_CONTAINER-3",
 						"refresh"
 					]
 				}
@@ -554,7 +614,10 @@
 					"raw": "http://10.0.1.10/resources/json/delphix/selfservice/bookmark",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -574,7 +637,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"type\":\"JSDataContainerRefreshParameters\",\n    \"forceOption\": false\n}",
+					"raw": "{\n    \"type\":\"JSDataContainerRestoreParameters\",\n    \"forceOption\": false,\n    \"timelinePointParameters\": {\n        \"type\": \"JSTimelinePointBookmarkInput\",\n        \"bookmark\": \"JS_BOOKMARK-1\"\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -582,10 +645,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://10.0.1.10/resources/json/delphix/selfservice/container/JS_DATA_CONTAINER-58/restore",
+					"raw": "http://10.0.1.10/resources/json/delphix/selfservice/container/JS_DATA_CONTAINER-3/restore",
 					"protocol": "http",
 					"host": [
-						"10.0.1.10"
+						"10",
+						"0",
+						"1",
+						"10"
 					],
 					"path": [
 						"resources",
@@ -593,7 +659,7 @@
 						"delphix",
 						"selfservice",
 						"container",
-						"JS_DATA_CONTAINER-58",
+						"JS_DATA_CONTAINER-3",
 						"restore"
 					]
 				}
