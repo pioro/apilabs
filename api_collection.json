@@ -1,0 +1,608 @@
+{
+	"info": {
+		"_postman_id": "692a9ebd-e3a5-4d3f-b665-8d5ee4ebfe3b",
+		"name": "Delphix",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "session set",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"APISession\",\n    \"version\": {\n       \"type\": \"APIVersion\",\n        \"major\": 1,\n        \"minor\": 11,\n        \"micro\": 1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/session",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"type\": \"LoginRequest\",\n\"username\": \"admin\",\n\"password\": \"delphix\",\n\"target\": \"DOMAIN\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/login",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all groups",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/group",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"group"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all databases",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/database",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"database"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List snapshots of container - test19",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/snapshot?database=ORACLE_DB_CONTAINER-125",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"snapshot"
+					],
+					"query": [
+						{
+							"key": "database",
+							"value": "ORACLE_DB_CONTAINER-125"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Snapshot timerange",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/snapshot/ORACLE_SNAPSHOT-798/timeflowRange",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"snapshot",
+						"ORACLE_SNAPSHOT-798",
+						"timeflowRange"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all evironments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/environment",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"environment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all hosts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/host",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"host"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List repositories for an environment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/repository?environment=UNIX_HOST_ENVIRONMENT-37",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"repository"
+					],
+					"query": [
+						{
+							"key": "environment",
+							"value": "UNIX_HOST_ENVIRONMENT-37"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Provision a VDB - defaults",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"TimeflowPointSemantic\",\n    \"container\": \"ORACLE_DB_CONTAINER-125\",\n    \"location\": \"LATEST_POINT\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/database/provision/defaults",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"database",
+						"provision",
+						"defaults"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Provision a VDB",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"OracleProvisionParameters\",\n    \"container\": {\n        \"type\": \"OracleDatabaseContainer\",\n        \"name\": \"apivdb\",\n        \"group\": \"GROUP-2\"\n    },\n    \"source\": {\n        \"type\": \"OracleVirtualSource\",\n        \"mountBase\": \"/mnt/provision\",\n        \"configParams\": {\n            \"processes\": \"300\",\n            \"nls_language\": \"'AMERICAN'\",\n            \"pga_aggregate_target\": \"524288000\",\n            \"sga_target\": \"1577058304\",\n            \"nls_territory\": \"'AMERICA'\",\n            \"compatible\": \"'19.0.0'\",\n            \"remote_login_passwordfile\": \"'EXCLUSIVE'\",\n            \"open_cursors\": \"300\"\n        },\n        \"nodeListeners\": [],\n        \"operations\": {\n            \"type\": \"VirtualSourceOperations\",\n            \"configureClone\": [],\n            \"preRefresh\": [],\n            \"postRefresh\": [],\n            \"preRollback\": [],\n            \"postRollback\": [],\n            \"preSnapshot\": [],\n            \"postSnapshot\": [],\n            \"preStart\": [],\n            \"postStart\": [],\n            \"preStop\": [],\n            \"postStop\": []\n        },\n        \"redoLogSizeInMB\": 1024,\n        \"redoLogGroups\": 3,\n        \"archivelogMode\": true,\n        \"customEnvVars\": [],\n        \"allowAutoVDBRestartOnHostReboot\": true\n    },\n    \"sourceConfig\": {\n        \"type\": \"OracleSIConfig\",\n        \"name\": \"apivdb\",\n        \"linkingEnabled\": false,\n        \"repository\": \"ORACLE_INSTALL-31\",\n        \"services\": [],\n        \"databaseName\": \"apivdb\",\n        \"uniqueName\": \"apivdb\",\n        \"instance\": {\n            \"type\": \"OracleInstance\",\n            \"instanceNumber\": 1,\n            \"instanceName\": \"apivdb\"\n        }\n    },\n    \"timeflowPointParameters\": {\n        \"type\": \"TimeflowPointSemantic\",\n        \"location\": \"LATEST_POINT\",\n        \"container\": \"ORACLE_DB_CONTAINER-125\"\n    },\n    \"masked\": false,\n    \"openResetlogs\": true,\n    \"physicalStandby\": false,\n    \"newDBID\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/database/provision",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"database",
+						"provision"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List job status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/repository?environment=UNIX_HOST_ENVIRONMENT-37",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"repository"
+					],
+					"query": [
+						{
+							"key": "environment",
+							"value": "UNIX_HOST_ENVIRONMENT-37"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of templates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/selfservice/template",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"selfservice",
+						"template"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of data sources",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/selfservice/template",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"selfservice",
+						"template"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all child VDB",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/database?provisionContainer=ORACLE_DB_CONTAINER-125",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"database"
+					],
+					"query": [
+						{
+							"key": "provisionContainer",
+							"value": "ORACLE_DB_CONTAINER-125"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create container",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\":\"JSDataContainerCreateWithoutRefreshParameters\",\n    \"dataSources\" : [ \n        {\n         \"type\" : \"JSDataSourceCreateParameters\",\n         \"source\" : {\n            \"type\" : \"JSDataSource\",\n            \"priority\" : 1,\n            \"name\" : \"APICONT_DS\"\n        },\n        \"container\" : \"ORACLE_DB_CONTAINER-239\"\n        }\n     ],\n    \"name\" : \"APICONT\",\n    \"template\" : \"JS_DATA_TEMPLATE-22\",\n    \"owners\" : []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/selfservice/container",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"selfservice",
+						"container"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of containers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/repository?environment=UNIX_HOST_ENVIRONMENT-37",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"repository"
+					],
+					"query": [
+						{
+							"key": "environment",
+							"value": "UNIX_HOST_ENVIRONMENT-37"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of branch of my container",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/selfservice/branch?dataLayout=JS_DATA_CONTAINER-58",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"selfservice",
+						"branch"
+					],
+					"query": [
+						{
+							"key": "dataLayout",
+							"value": "JS_DATA_CONTAINER-58"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create bookmark",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\":\"JSBookmarkCreateParameters\",\n    \"bookmark\" : {\n        \"type\" : \"JSBookmark\",\n        \"name\" : \"bookmark api test\",\n        \"branch\" : \"JS_BRANCH-119\"\n    },\n    \"timelinePointParameters\" : {\n        \"type\": \"JSTimelinePointLatestTimeInput\",\n        \"sourceDataLayout\": \"JS_DATA_CONTAINER-58\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/selfservice/bookmark",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"selfservice",
+						"bookmark"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh container",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\":\"JSDataContainerRefreshParameters\",\n    \"forceOption\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/selfservice/container/JS_DATA_CONTAINER-58/refresh",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"selfservice",
+						"container",
+						"JS_DATA_CONTAINER-58",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of bookmarks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/selfservice/bookmark",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"selfservice",
+						"bookmark"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recover container",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\":\"JSDataContainerRefreshParameters\",\n    \"forceOption\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://myengine/resources/json/delphix/selfservice/container/JS_DATA_CONTAINER-58/restore",
+					"protocol": "http",
+					"host": [
+						"myengine"
+					],
+					"path": [
+						"resources",
+						"json",
+						"delphix",
+						"selfservice",
+						"container",
+						"JS_DATA_CONTAINER-58",
+						"restore"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
