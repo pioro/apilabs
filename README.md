@@ -26,4 +26,12 @@
 
 ### lab 
 
-[lab](lab.txt) Labs
+1. Open a terminal
+2. Log as delphix user to 10.0.X.30 where X is your lab number
+ `ssh delphix@10.0.X.30` 
+
+3. Change directory to dxtoolkit 
+  `cd dxtoolkit2`
+4. Run commands from [lab](lab.txt) Labs
+
+
