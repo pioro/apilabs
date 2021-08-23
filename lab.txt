@@ -10,9 +10,21 @@
 
 ./dx_get_js_bookmarks -d labengine
 
+sqlplus / as sysdba
+create table beforetest(id number);
+insert into beforetest values (1);
+commit;
+exit
+
 ./dx_ctl_js_bookmarks -d labengine -bookmark_name "before test" -action create -container_name "devdb container" -template_name "orcl template"  -bookmark_time latest -expireat "2021-08-30"
 
 ./dx_get_js_bookmarks -d labengine -container_name "devdb container"
+
+sqlplus / as sysdba
+create table nexttest(id number);
+insert into nexttest values (1);
+commit;
+exit
 
 ./dx_get_js_bookmarks -d labengine -bookmark_name "before test" -realtime
 
@@ -24,16 +36,40 @@
 
 ./dx_ctl_js_container -d labengine -action refresh -container_name "devdb container" -template_name "orcl template"
 
+sqlplus / as sysdba
+select * from beforetest;
+select * from nexttest;
+exit
+
 ./dx_get_js_snapshots -d labengine
 
 ./dx_ctl_js_bookmarks -d labengine -bookmark_name "rollback" -action create -container_name "devdb container" -template_name "orcl template"  -bookmark_time latest -expireat "2021-08-30"
 
+sqlplus / as sysdba
+select * from beforetest;
+select * from nexttest;
+exit
+
 ./dx_ctl_js_container -d labengine -action restore -container_name "devdb container" -template_name "orcl template" -timestamp "2021-08-17 01:31:31" -fromtemplate
+
+sqlplus / as sysdba
+select * from beforetest;
+select * from nexttest;
+exit
 
 ./dx_ctl_js_container -d labengine -action restore -container_name "devdb container" -template_name "orcl template" -timestamp rollback
 
+sqlplus / as sysdba
+select * from beforetest;
+select * from nexttest;
+exit
+
 ./dx_ctl_js_container -d labengine -action restore -container_name "devdb container" -template_name "orcl template" -timestamp "2021-08-17 01:05:00"
 
+sqlplus / as sysdba
+select * from beforetest;
+select * from nexttest;
+exit
 
 
 # EX3
@@ -41,6 +77,12 @@
 ./dx_ctl_js_branch -d labengine -action create -container_name "devdb container" -template_name "orcl template" -branch_name "APP1" -timestamp rollback
 
 ./dx_get_js_snapshots -d labengine
+
+sqlplus / as sysdba
+create table bug123(id number);
+insert into bug123 values (1);
+commit;
+exit
 
 ./dx_ctl_js_bookmarks -d labengine -bookmark_name "bug123" -action create -container_name "devdb container" -template_name "orcl template"  -bookmark_time latest -expireat "2021-08-30"
 
@@ -50,6 +92,14 @@
 ./dx_ctl_js_bookmarks -d labengine -bookmark_name "bug123" -action share -container_name "devdb container"
 
 ./dx_ctl_js_branch -d labengine -action create -container_name "qadb container" -template_name "orcl template" -branch_name bug123 -timestamp bug123 
+
+. oraenv
+(answer with qadb)
+sqlplus / as sysdba
+select * from beforetest;
+select * from nexttest;
+select * from bug123;
+exit
 
 ./dx_get_js_branches -d labengine 
 
