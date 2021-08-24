@@ -97,14 +97,12 @@ exit
 . oraenv
 (answer with qadb)
 sqlplus / as sysdba
-select * from beforetest;
-select * from nexttest;
 select * from bug123;
 exit
 
 ./dx_get_js_branches -d labengine 
 
-./dx_get_js_branches -d labengine -container_name "devdb container"
+./dx_get_js_branches -d labengine -container_name "qadb container"
 
-./dx_ctl_js_branch -d labengine -container_name "devdb container" -action activate -branch_name default
+./dx_ctl_js_branch -d labengine -container_name "qadb container" -action activate -branch_name default
 
