@@ -43,32 +43,33 @@ exit
 
 ./dx_get_js_snapshots -d labengine
 
+sqlplus / as sysdba
+create table test1(id number);
+insert into test1 values (1);
+commit;
+exit
+
+
 ./dx_ctl_js_bookmarks -d labengine -bookmark_name "rollback" -action create -container_name "devdb container" -template_name "orcl template"  -bookmark_time latest -expireat "2021-08-30"
 
-sqlplus / as sysdba
-select * from beforetest;
-select * from nexttest;
-exit
+
 
 ./dx_ctl_js_container -d labengine -action restore -container_name "devdb container" -template_name "orcl template" -timestamp "2021-08-17 01:31:31" -fromtemplate
 
 sqlplus / as sysdba
-select * from beforetest;
-select * from nexttest;
+select * from test1;
 exit
 
 ./dx_ctl_js_container -d labengine -action restore -container_name "devdb container" -template_name "orcl template" -timestamp rollback
 
 sqlplus / as sysdba
-select * from beforetest;
-select * from nexttest;
+select * from test1;
 exit
 
 ./dx_ctl_js_container -d labengine -action restore -container_name "devdb container" -template_name "orcl template" -timestamp "2021-08-17 01:05:00"
 
 sqlplus / as sysdba
-select * from beforetest;
-select * from nexttest;
+select * from test1;
 exit
 
 
