@@ -1,8 +1,4 @@
-#dx_provision_vdb -d labengine -type oracle -group "DB Targets" -creategroup -sourcename "orcl"  -srcgroup "DB Sources" -targetname "dxtest"  -dbname "dxtest" -environment "Target"  -envinst "/u01/app/oracle/product/11.2.0/dbhome_1"  -envUser "delphix" -redoGroup 3 -redoSize 50 -archivelog=yes -mntpoint "/mnt/provision" -instname dxtest -uniqname dxtest
-
-#./dx_ctl_js_container -d labengine -action create -dontrefresh -container_name "dxtest container" -template_name "orcl template" -container_owner "qa" -container_def "DB Targets,dxtest"
-
-# EX 1
+# Lab Ex 1
 
 ## List Containers
 ```
@@ -56,7 +52,7 @@ exit
 ./dx_ctl_js_bookmarks -d labengine -bookmark_name "first bookmark" -action remove -container_name "devdb container"
 ```
 
-# EX 2
+# Lab Ex 2
 
 ## Refresh Container
 ```
@@ -114,7 +110,7 @@ select * from test1;
 exit
 ```
 
-# EX3
+# Lab Ex 3
 
 ## Create Branch
 ```
@@ -138,7 +134,10 @@ exit
 ### This command will fail as bookmark is not shared
 ```
 ./dx_ctl_js_branch -d labengine -action create -container_name "qadb container" -template_name "orcl template" -branch_name bug123 -timestamp bug123 
+```
 
+### Share bookmark
+```
 ./dx_ctl_js_bookmarks -d labengine -bookmark_name "bug123" -action share -container_name "devdb container"
 
 ./dx_ctl_js_branch -d labengine -action create -container_name "qadb container" -template_name "orcl template" -branch_name bug123 -timestamp bug123 
