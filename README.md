@@ -34,6 +34,6 @@
   `cd dxtoolkit2`
 4. Set an Oracle environment - use `devdb` as ORACLE_SID
    `. oraenv`
-5. Run commands from [lab](lab.txt) Labs
+5. Run commands from [lab](lab.md) Labs
 
 
