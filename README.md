@@ -1,7 +1,7 @@
 # apilabs
 
 ### dxtoolkit download
-[dxtoolkit](https://drive.google.com/file/d/17GYvj_-nLcNDdU1iCG2rQTuARczSi_QT/view?usp=sharing) dxtoolkit for RH6
+[dxtoolkit](https://github.com/delphix/dxtoolkit/releases/download/v2.4.13/dxtoolkit2-v2.4.13-redhat6-installer.tar.gz) dxtoolkit for RH6
 
 
 ### config file
